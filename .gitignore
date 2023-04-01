@@ -1,0 +1,12 @@
+.git
+.env
+.DS_Store # macOS specific ignore
+__pycache__/
+astro
+include/astronomer-cosmos
+dags/dbt/**/target/**
+dags/dbt/**/dbt_modules/**
+dags/dbt/**/dbt_packages/**
+dags/dbt/**/.DS_Store
+dbt/**/*.log
+venv/
