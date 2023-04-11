@@ -1,0 +1,11 @@
+postgres_profile:
+  outputs:
+    dev:
+      dbname: '{{ env_var(''POSTGRES_DATABASE'') }}'
+      host: '{{ env_var(''POSTGRES_HOST'') }}'
+      pass: '{{ env_var(''POSTGRES_PASSWORD'') }}'
+      port: '{{ env_var(''POSTGRES_PORT'') | as_number }}'
+      schema: '{{ env_var(''POSTGRES_SCHEMA'') }}'
+      type: postgres
+      user: '{{ env_var(''POSTGRES_USER'') }}'
+  target: dev

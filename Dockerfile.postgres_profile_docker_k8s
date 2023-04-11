@@ -1,0 +1,16 @@
+FROM python:3.9
+
+RUN pip install dbt-postgres==1.3.1 psycopg2==2.9.3 pytz
+
+ENV POSTGRES_DATABASE=postgres
+ENV POSTGRES_HOST=host.docker.internal
+ENV POSTGRES_PASSWORD=<postgres_password>
+ENV POSTGRES_PORT=5432
+ENV POSTGRES_SCHEMA=public
+ENV POSTGRES_USER=postgres
+
+RUN mkdir /root/.dbt
+COPY example_postgres_profile.yml /root/.dbt/profiles.yml
+
+COPY dags dags
+COPY postgres_profile_dbt_project.yml dags/dbt/jaffle_shop/dbt_project.yml

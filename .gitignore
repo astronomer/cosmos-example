@@ -10,3 +10,4 @@ dags/dbt/**/dbt_packages/**
 dags/dbt/**/.DS_Store
 dbt/**/*.log
 venv/
+.idea/
