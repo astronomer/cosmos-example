@@ -1,1 +1,3 @@
-astronomer-cosmos
+dbt-postgres~=1.7.4
+astronomer-cosmos[docker]~=1.2.5
+pytz

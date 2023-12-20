@@ -3,8 +3,7 @@ from airflow.operators.empty import EmptyOperator
 from airflow.utils.task_group import TaskGroup
 from pendulum import datetime
 
-from cosmos.providers.dbt.core.operators.docker import DbtRunOperationDockerOperator, DbtSeedDockerOperator
-
+from cosmos.operators.docker import DbtRunOperationDockerOperator, DbtSeedDockerOperator
 
 # PATH within the Docker container for the DBT project
 PROJECT_DIR = "dags/dbt/jaffle_shop"
