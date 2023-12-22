@@ -1,9 +1,9 @@
 FROM ghcr.io/dbt-labs/dbt-core:latest
 
-RUN pip install dbt-postgres
+RUN pip install dbt-postgres~=1.7.4
 
 COPY dags/dbt/jaffle_shop /code/dbt/
-COPY azure_container_instance_profile.yml /code/dbt/profiles.yml
+COPY example_postgres_profile.yml /code/dbt/profiles.yml
 COPY postgres_profile_dbt_project.yml /code/dbt/dbt_project.yml
 WORKDIR /code/dbt/
 
