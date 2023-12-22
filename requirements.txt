@@ -1,3 +1,5 @@
 dbt-postgres~=1.7.4
-astronomer-cosmos[docker]~=1.2.5
+git+https://github.com/danielvdende/astronomer-cosmos.git@dvde/add-aci-support
 pytz
+apache-airflow-providers-microsoft-azure==8.4.0
+apache-airflow-providers-databricks==4.7.0
