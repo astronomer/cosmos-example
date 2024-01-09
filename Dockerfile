@@ -1,4 +1,4 @@
-FROM quay.io/astronomer/astro-runtime:9.6.0
+FROM quay.io/astronomer/astro-runtime:10.0.0
 
 WORKDIR /usr/local/airflow
 COPY dbt-requirements.txt ./
