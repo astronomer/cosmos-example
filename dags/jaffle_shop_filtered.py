@@ -34,7 +34,9 @@ with DAG(
         project_config=ProjectConfig(
             (DBT_ROOT_PATH / "jaffle_shop").as_posix(),
         ),
-        execution_config=ExecutionConfig(),
+        execution_config=ExecutionConfig(
+            dbt_executable_path="/usr/local/airflow/dbt_venv/bin/dbt",
+        ),
         operator_args={"install_deps": True},
         profile_config=profile_config,
         default_args={"retries": 2},
