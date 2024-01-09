@@ -1,1 +1,1 @@
-astronomer-cosmos
+astronomer-cosmos[docker]~=1.3.0

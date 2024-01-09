@@ -12,7 +12,7 @@ https://astronomer.github.io/astronomer-cosmos/getting_started/kubernetes.html#k
 from pathlib import Path
 
 from airflow import DAG
-from airflow.kubernetes.secret import Secret
+from airflow.providers.cncf.kubernetes.secret import Secret
 from pendulum import datetime
 
 from cosmos import (
@@ -21,7 +21,6 @@ from cosmos import (
     ExecutionConfig,
     ExecutionMode,
     DbtSeedKubernetesOperator,
-    DbtRunKubernetesOperator,
     DbtTaskGroup,
 )
 from cosmos.profiles import PostgresUserPasswordProfileMapping
