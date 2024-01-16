@@ -15,6 +15,25 @@ airflow:
       conn_password: postgres
       conn_port: 5432
       conn_extra: ""
+    - conn_id: aci_db
+      conn_type: postgres
+      conn_host: <<<YOUR POSTGRES HOST HERE>>>
+      conn_schema: <<<YOUR POSTGRES SCHEMA HERE>>>
+      conn_login: <<<YOUR POSTGRES LOGIN HERE>>>
+      conn_password: <<<YOUR POSTGRES PASSWORD HERE>>>
+      conn_port: 5432
+      conn_extra: ""
+    - conn_id: aci
+      conn_type: azure
+      conn_login: <<<YOUR AZURE ACI SP CLIENT_ID HERE>>>
+      conn_password: <<<YOUR AZURE ACI SP SECRET HERE>>>
+      conn_extra: '{"tenantId":"<<<YOUR AZURE TENANT_ID HERE>>>", "subscriptionId":"<<<YOUR AZURE SUBSCRIPTION_ID HERE>>>"}'
+    - conn_id: acr
+      conn_type: azure_container_registry
+      conn_host: <<<YOUR ACR HOST HERE>>>
+      conn_login: <<<YOUR ACR LOGIN HERE>>>
+      conn_password: <<<YOUR ACR PASSWORD HERE>>>
+
   pools:
     - pool_name:
       pool_slot:
