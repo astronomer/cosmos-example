@@ -1,0 +1,20 @@
+FROM python:3.11
+
+ENV GCP_PROJECT_ID=<<<<YOUR_GCP_PROJECT_ID>>>>
+ENV GCP_REGION=<<<<YOUR_GCP_REGION>>>>
+ENV BIGQUERY_DATASET=astronomer_cosmos_example
+ENV BIGQUERY_PRIORITY=interactive
+ENV BIGQUERY_THREADS=1
+ENV BIGQUERY_TIMEOUT=300
+ENV BIGQUERY_JOB_RETRIES=1
+ENV GCP_AUTH_METHOD=oauth
+
+RUN pip install dbt-core==1.8.2 dbt-bigquery==1.8.1
+
+RUN mkdir /root/.dbt
+
+COPY dags dags
+COPY gcp_cloud_run_job_example/example_bigquery_profile.yml /root/.dbt/profiles.yml
+COPY gcp_cloud_run_job_example/bigquery_profile_dbt_project.yml dags/dbt/jaffle_shop/dbt_project.yml
+
+WORKDIR /dags/dbt/jaffle_shop
