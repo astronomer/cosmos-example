@@ -1,1 +1,4 @@
-astronomer-cosmos[docker]~=1.3.0
+dbt-postgres~=1.7.4
+git+https://github.com/danielvdende/astronomer-cosmos.git@dvde/add-aci-support
+pytz
+apache-airflow-providers-microsoft-azure==8.4.0
