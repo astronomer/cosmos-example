@@ -1,0 +1,12 @@
+FROM python:3.9
+
+RUN pip install dbt-core==1.7.10 dbt-postgres psycopg2==2.9.3 pytz 
+
+
+RUN mkdir /root/.dbt
+COPY example_postgres_profile.yml /root/.dbt/profiles.yml
+
+COPY dags dags
+COPY postgres_profile_dbt_project.yml dags/dbt/jaffle_shop/dbt_project.yml
+
+WORKDIR /dags/dbt/jaffle_shop

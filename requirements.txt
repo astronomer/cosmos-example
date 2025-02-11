@@ -2,3 +2,4 @@ dbt-postgres~=1.7.4
 git+https://github.com/danielvdende/astronomer-cosmos.git@dvde/add-aci-support
 pytz
 apache-airflow-providers-microsoft-azure==8.4.0
+apache-airflow-providers-amazon==9.0.0
